@@ -40,7 +40,7 @@ Math.random( );		//可以大声读出来：“调用Math的随机数函数”。
 
 你得到了什么结果？在我的浏览器中的运行结果如下：
 
-![](srcImg/chapter4_random.png)
+![random result](srcImg/chapter4_random.png)
 
 你可以尝试多运行几次，就会发现你获得的数值是不一样的，这就是随机数。唯一的问题是——随机小数并不是我们想要的，怎么办？random( ) 会生成一个从0~1（但不会是1）的数值啊。
 
@@ -308,23 +308,77 @@ function 豆浆机 ( 豆子数, 糖 )
 //一如既往地，声明HP、TakeDamage( )
 var heroHP = 100;
 
+//这里的方法声明跟前面一致，想多练的可以跟着再敲一次
 function TakeDamage()
 {
-	//...略，如前。
+	//将要被扣的血：这里限制在30以内的随机数
+	var randHP = Math.round( Math.random() * 30 );
+        
+	console.log("呜……勇者受到"+randHP+"点伤害！");
+
+	//扣血
+	heroHP = heroHP - randHP;
+	
+	//看看勇者生命值是否为负值，是的话输出游戏结束
+	if(heroHP <= 0)
+	{
+		console.log("游戏结束了！勇者已经死翘翘了！");
+	}
+	else
+	{
+		//--否则的话，输出目前的HP
+		console.log("现在HP: "+heroHP);
+	}
+}
+
+//这里多声明一个函数，用于检查勇者是否已经死掉了：
+function IsHeroDead( )
+{
+	return heroHP <= 0 ;
 }
 
 //新的一天：
 function NewDay()
 {
+	console.log("------------------------------------------------");
 	console.log("新的一天开始了！");
-	console.
+	console.log("勇者肚子开始咕噜噜叫了起来：");
+
+	TakeDamage( );
+
+	if( IsHeroDead( )) 		//效果等同于if ( heroHP <= 0 )  ：如果看不真切，可以对照上面的方法内容进行查看。
+	{
+		console.log("勇者已经死翘翘了……游戏结束。");
+	}
+	else
+	{
+		console.log("一天结束了……");
+		console.log("------------------------------------------------");
+
+		//请睁大眼睛看看这里使用了方法自己本身，超高级的用法：
+		NewDay( ); 
+	}
 }
 
 ```
+
+现在，所有需要的方法都已经声明结束，你能猜到结果吗？只需要运行：
+
+```
+ NewDay( );
+ ```
+
+你就可以看到刷的一下，一大串文字会出现在你面前。
+![New Day](srcImg/chapter4_NewDayFunction.png 一天天过去勇者终于死掉了)
+
+那么，问题来了：究竟发生了什么？如果你似乎有点不理解这个过程，我们先来做一件事：
+
+SetTimeout
+画图
 TODO:回调
 
 
-
+//方法的好处：更容易看出一串代码的作用
 参数作用域、参数个数、返回值
 
 TODO：在控制台时换行：Shift+Enter

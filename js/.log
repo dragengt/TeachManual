@@ -16,9 +16,19 @@ C4小范围修改
 
 ---
 #TODO NOTE：
-
 ---
+
 *警告以下为后续想法，非阅读章节，阅读可能导致脑子混乱*
+
+实现一个随机范围的函数：
+Math.randomRange = 
+function(from,to)
+{
+   return Math.round( Math.random()*  (to-from) )+from;
+
+}
+
+
 
 又一个往后的代码中超常用的方法！这个方法用于延迟计算或者执行方法。需要注意的是，它的调用格式是这样的：
 

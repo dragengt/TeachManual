@@ -301,7 +301,7 @@ function 豆浆机 ( 豆子数, 糖 )
 > 旁白：“……因为你没吃饭，每天过去，你肯定会少生命值啊笨！你以为在游戏里就不用吃饭了吗？扣你那么点血已经是仁至义尽了好不好！”
 > 勇者：“……好吧，记得复活我。”
 
-![Poor hero](srcImg/chapter4_PoorHero.png Why???)
+![Poor hero](srcImg/chapter4_PoorHero.png)
 
 
 好的，现在先声明一个叫NewDay()的方法，看看方法的高级用法——
@@ -372,7 +372,7 @@ function NewDay()
 ```
 
 你就可以看到刷的一下，一大串文字会出现在你面前。
-![New Day](srcImg/chapter4_NewDayFunction.png 一天天过去勇者终于死掉了)
+![New Day](srcImg/chapter4_NewDayFunction.png)
 
 那么，问题来了：究竟发生了什么？
 
@@ -380,7 +380,7 @@ function NewDay()
 
 确实地，NewDay其实在即将结束的时候，开启了新的一天。但是，这样只会无限地自我循环下去（当然，类比于现实世界中，时间就是这样，每一天都是这样无限地继续下去）：
 
-![Recursive Function](srcImg/chapter4_RecursiveFunction.png 递归函数：重复自己的方法)
+![Recursive Function](srcImg/chapter4_RecursiveFunction.png)
 
 这种重复调用自己的方法，我们称之为：**递归函数**或**递归方法**。
 
@@ -436,7 +436,7 @@ PassStage( 1 );
 
 如果代码正确，应该得到这样的输出值（截图所限，只能展示前面部分。实际上就是输出1到99关）：
 
-![Counting 1 to 99](srcImg/chapter4_logRucursiveCounter.png 递归函数：重复自己的方法)
+![Counting 1 to 99](srcImg/chapter4_logRucursiveCounter.png)
 
 ……
 
@@ -560,7 +560,7 @@ F( 100 );
 
 ——因为每个方法也跟人一样，要买房住啊~哦，不，方法也要内存空间啊，控制台没地方给那么多的方法住了，自然要崩溃了。
 
->![Dog ](srcImg/hintDog.gif Doge之微笑) *更让人崩溃的是，他们都叫F，哈……呵呵。*
+>![Dog ](srcImg/hintDog.gif) “更让人崩溃的是，他们都叫F，哈……呵呵。”
 
 ---
 
